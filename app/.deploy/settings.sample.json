@@ -1,0 +1,19 @@
+{
+  "defaultAccounts": [
+    { "email": "admin@sdlc.com", "password": "admin", "role": "admin" },
+    { "email": "user1@sdlc.com", "password": "fakepassword" },
+    { "email": "user2@sdlc.com", "password": "fakepassword2" }
+  ],
+
+  "defaultData": [
+    { "website": "amazon.com", "username": "amazon_username", "owner": "user1@sdlc.com", "password": "notaRealpassword123" },
+    { "website": "apple.com", "username": "apple_username", "owner": "user1@sdlc.com", "password": "notaRealpassword456" },
+    { "website": "ameritrade.com", "username": "ameritrade_username", "owner": "user2@sdlc.com", "password": "notaRealpassword789"},
+    { "website": "gamestop.com", "username": "gamestop_username", "owner": "user2@sdlc.com", "password": "notaRealpassword666" }
+  ],
+
+  "monti": {
+    "appId": "changeme",
+    "appSecret": "changeme"
+  }
+}
