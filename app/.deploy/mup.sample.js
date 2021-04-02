@@ -6,9 +6,9 @@ module.exports = {
       password: 'changeme'
     }
   },
-
+  
   app: {
-    name: 'meteor-application-template-react',
+    name: 'meteor-password-manager-react',
     path: '../',
 
     servers: {
