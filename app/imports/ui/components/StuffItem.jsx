@@ -15,7 +15,6 @@ class StuffItem extends React.Component {
           <Link to={`/edit/${this.props.stuff._id}`}>Edit</Link>
         </Table.Cell>
         <Table.Cell>
-          //Autoform button; send data to decrypt function, then print 
           <Link to={`na`}>Decrypt</Link>
         </Table.Cell>
       </Table.Row>

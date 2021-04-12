@@ -16,25 +16,29 @@ const formSchema = new SimpleSchema({
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
+const bcrypt = require('bcryptjs');
+
 /** Renders the Page for adding a document. */
 class AddStuff extends React.Component {
 
   // On submit, insert the encrypted data.
   encryptedInsert(data, formRef) {
-    const { website, username, password } = data;
+    let { website, username, password } = data;
     const owner = Meteor.user().username;
-
-        //encrypt password
-
-    Stuffs.collection.insert({ website, username, password, owner },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Item added successfully', 'success');
-          formRef.reset();
-        }
+    bcrypt.genSalt(10, function (err, salt) {
+      bcrypt.hash(password, salt, function(err, hash) {
+        password = hash;
+        Stuffs.collection.insert({ website, username, password, owner },
+          (error) => {
+            if (error) {
+              swal('Error', error.message, 'error');
+            } else {
+              swal('Success', 'Item added successfully', 'success');
+              formRef.reset();
+            }
+          });
       });
+    });
   }
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
