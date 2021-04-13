@@ -61,6 +61,7 @@ What is pending:
 Worked on so far:
 - Joe: user interface design an implementation
 - Simplicio: password manager functionality
+- Andrew: Injection testing
 
 Progress:
 - design webapp interface
