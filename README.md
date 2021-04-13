@@ -3,8 +3,47 @@ A password manager application
 
 To run: Install node.js, npm, meteor, mongo, react, semantic ui, bcrypt
 meteor npm run start
-	
+
 Sign in: create new user or sign in as admin. user data found in config/setting.development.json
+
+Assignment 4 4/11/21
+What is complete so far:
+- backend encryption implemented
+- user interface design and implementation
+- password manager functionality
+- outline of implementation
+- listing of tools
+
+What is pending:
+- backend decryption functionality
+- front end support of decrypt
+
+Worked on so far:
+- Joe: user interface design(1), implementation(2), Unit & acceptance testing (3), encryption feature(4), XML & Protocol testing(4)
+- Simplicio: password manager functionality code outline
+- Andrew: noSQL testing
+
+Progress:
+- design webapp interface
+- implemented user/admin profile features
+- implemented collections of user data with mongoDB
+- encrypt backend user passwords with bcrypt
+- implemented add and list features for mongo collections
+- unit and acceptance testing
+- encrypt backend added passwords with bcrypt
+- fuzz testing
+
+Link: https://github.com/sjavella/SDLC-Password-Manager
+
+What is left to do?
+- implement decrypt() in ListStuff.jsx
+- implement authorization to access StuffsCollection for admin users
+- clean up the front end
+
+Roles & Responsibilities:
+- New completions: implement encryption for added passwords
+- Current: implementing decryption to view added passwords
+- Next: clean up the front end and prepare for production!
 
 
 Assignment 3 3/21/21 - 4/4/21
@@ -17,7 +56,7 @@ What is complete so far:
 
 What is pending:
 - porting password manager functionality
-- fixing security vulnerability in the StuffsCollection 
+- fixing security vulnerability in the StuffsCollection
 
 Worked on so far:
 - Joe: user interface design an implementation
