@@ -8,6 +8,7 @@
     "bcryptjs": "^2.4.3",
     "classnames": "^2.2.6",
     "core-js": "^3.9.0",
+    "cryptr": "^6.0.2",
     "graphql": "^14.5.8",
     "meteor-node-stubs": "^1.0.1",
     "mock-aws-s3": "^4.0.2",
