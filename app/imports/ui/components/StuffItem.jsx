@@ -18,50 +18,28 @@ class StuffItem extends React.Component {
   }
 
   decryptedPrint() {
-    console.log("inside decryptedPrint()");
     this.props.stuff.decryptedString = cryptr.decrypt(this.props.stuff.password);
-    console.log(this.props.stuff.decryptedString);
     this.setState((currentState, props) => {
       return { isRequested: !currentState.isRequested, decryptedPassword: props.stuff.decryptedString};
     });
-
   }
-
+  
   render() {
-    const request = this.state.isRequested;
-    console.log(request);
-    let decryptField;
-    if (request) {
-       console.log("in decrypted password display field");
-       console.log(this.state.decryptedPassword);
-       decryptField = <Table.Cell>{this.state.decryptedPassword}</Table.Cell>;
-     } else {
-       decryptField = <Table.Cell>{this.props.stuff.password}</Table.Cell>;
-    }
+    const request = this.state.isRequested; let sensitive;
+    request ? sensitive = <Table.Cell>{this.state.decryptedPassword}</Table.Cell> : sensitive = <Table.Cell>{this.props.stuff.password}</Table.Cell>
     return (
       <Table.Row>
         <Table.Cell>{this.props.stuff.website}</Table.Cell>
         <Table.Cell>{this.props.stuff.username}</Table.Cell>
-        <Table.Cell>
-          <Link to={`/edit/${this.props.stuff._id}`}>Edit</Link>
-        </Table.Cell>
-        <Table.Cell>
-        {decryptField}
-        <Button
-            content='Decrypt'
-            onClick={this.decryptedPrint}
-          />
-        </Table.Cell>
-      </Table.Row>
-    );
+        <Table.Cell><Link to={`/edit/${this.props.stuff._id}`}>Edit</Link></Table.Cell>
+        <Table.Cell>{sensitive}</Table.Cell>
+        <Table.Cell><Button content='Decrypt' onClick={this.decryptedPrint} /></Table.Cell>
+      </Table.Row>);
   }
 }
 
 // Require a document to be passed to this component.
 StuffItem.propTypes = {
-  security: PropTypes.shape({
-    decryptedString: PropTypes.string,
-  }).isRequired,
   stuff: PropTypes.shape({
     decryptedString: PropTypes.string,
     website: PropTypes.string,

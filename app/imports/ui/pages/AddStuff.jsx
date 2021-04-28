@@ -15,7 +15,6 @@ const formSchema = new SimpleSchema({
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
-
 const Cryptr = require('cryptr');
 const cryptr = new Cryptr('myTotalySecretKey');
 
@@ -26,21 +25,10 @@ class AddStuff extends React.Component {
   encryptedInsert(data, formRef) {
     let { website, username, password } = data;
     const owner = Meteor.user().username;
-    const encryptedPassword = cryptr.encrypt(password);
-    password = encryptedPassword;
-       console.log(password);
-       console.log(website);
-       console.log(username);
-       console.log(encryptedPassword);
-    Stuffs.collection.insert({ website, username, password, owner },
-          (error) => {
-            if (error) {
-              swal('Error', error.message, 'error');
-            } else {
-              swal('Success', 'Item added successfully', 'success');
-              formRef.reset();
-            }
-          });
+    password = cryptr.encrypt(password);
+    Stuffs.collection.insert({ website, username, password, owner }, (error) => {
+            if (error) { swal('Error', error.message, 'error'); }
+            else { swal('Success', 'Password Successfully Encrypted', 'success'); formRef.reset();}});
   }
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
