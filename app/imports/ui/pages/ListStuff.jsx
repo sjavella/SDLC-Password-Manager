@@ -23,8 +23,9 @@ class ListStuff extends React.Component {
               <Table.HeaderCell>Website</Table.HeaderCell>
               <Table.HeaderCell>Username</Table.HeaderCell>
               <Table.HeaderCell>Password</Table.HeaderCell>
-              <Table.HeaderCell>Edit</Table.HeaderCell>
               <Table.HeaderCell>Decrypt</Table.HeaderCell>
+              <Table.HeaderCell>Edit</Table.HeaderCell>
+              <Table.HeaderCell>Delete</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
           <Table.Body>
