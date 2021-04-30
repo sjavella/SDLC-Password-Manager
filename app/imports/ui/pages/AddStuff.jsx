@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Segment, Header } from 'semantic-ui-react';
+import { Grid, Segment, Header, Loader } from 'semantic-ui-react';
 import { AutoForm, ErrorsField, NumField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
@@ -21,24 +21,37 @@ const cryptr = new Cryptr('myTotalySecretKey');
 /** Renders the Page for adding a document. */
 class AddStuff extends React.Component {
 
-  // On submit, insert the encrypted data.
+  constructor(props) {
+    super(props);
+    this.state = {loader: false};
+  }
+
+  load = (data, fRef) => {
+    this.setState({ loader: true });
+    setTimeout(() => {
+      this.encryptedInsert(data, fRef);
+      this.setState({ loader: false });
+    }, 100);
+  }
+
   encryptedInsert(data, formRef) {
     let { website, username, password } = data;
     const owner = Meteor.user().username;
     password = cryptr.encrypt(password);
     Stuffs.collection.insert({ website, username, password, owner }, (error) => {
             if (error) { swal('Error', error.message, 'error'); }
-            else { swal('Success', 'Password Successfully Encrypted', 'success'); formRef.reset();}});
+            else { swal('Success', 'Password Successfully Added', 'success'); formRef.reset();}});
   }
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   render() {
-    let fRef = null;
+    let fRef = null, loading = this.state.loader;
     return (
       <Grid container centered>
         <Grid.Column>
           <Header as="h2" textAlign="center">Add Password</Header>
-          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.encryptedInsert(data, fRef)} >
+          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.load(data,fRef)} disabled={loading}>
+          {loading && (<Loader active>Encrypting...</Loader>)}
             <Segment>
               <TextField name='website'/>
               <TextField name='username'/>
