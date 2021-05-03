@@ -1,10 +1,11 @@
 # SDLC-Password-Manager
 A password manager application
 
-To run: Install node.js, npm, meteor, mongo, react, semantic ui, bcrypt
-meteor npm run start
+To install: node.js, npm, meteor, mongo, react, semantic ui, bcrypt, cryptr
 
-Sign in: create new user or sign in as admin. user data found in config/setting.development.json
+To run: meteor npm run start
+
+Sign in: create new user or sign in as user@sdlc.com, password: fakepassword 
 
 Assignment 5 5/2/21
 Installation & Usage:
