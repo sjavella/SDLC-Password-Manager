@@ -9,13 +9,29 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Stuffs } from '../../api/stuff/Stuff';
 
 const bridge = new SimpleSchema2Bridge(Stuffs.schema);
+const Cryptr = require('cryptr');
+const cryptr = new Cryptr('myTotalySecretKey');
 
 /** Renders the Page for editing a single document. */
 class EditStuff extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {loader: false};
+  }
+
+  load = (data) => {
+    this.setState({ loader: true });
+    setTimeout(() => {
+      this.submit(data);
+      this.setState({ loader: false });
+    }, 100);
+  }
+
   // On successful submit, insert the data.
   submit(data) {
-    const { website, username, password, _id } = data;
+    let { website, username, password, _id } = data;
+    password = cryptr.encrypt(password);
     Stuffs.collection.update(_id, { $set: { website, username, password } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Password updated successfully', 'success')));
@@ -28,16 +44,18 @@ class EditStuff extends React.Component {
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
+   let loading = this.state.loader;
     return (
       <Grid container centered>
         <Grid.Column>
           <Header as="h2" textAlign="center">Edit Stuff</Header>
-          <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
+          <AutoForm schema={bridge} onSubmit={data => this.load(data)} model={this.props.doc}>
+          {loading && (<Loader active>Encrypting...</Loader>)}
             <Segment>
               <TextField name='website'/>
               <TextField name='username'/>
-              <TextField name='password'/>
-              <SubmitField value='Encrypt'/>
+              <TextField type='password' name='password'/>
+              <SubmitField disabled={loading} value='Encrypt'/>
               <ErrorsField/>
               <HiddenField name='owner' />
             </Segment>

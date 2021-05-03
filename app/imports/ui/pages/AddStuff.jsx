@@ -55,8 +55,8 @@ class AddStuff extends React.Component {
             <Segment>
               <TextField name='website'/>
               <TextField name='username'/>
-              <TextField name='password'/>
-              <SubmitField value='Encrypt'/>
+              <TextField type='password' name='password'/>
+              <SubmitField disabled={loading} value='Encrypt'/>
               <ErrorsField/>
             </Segment>
           </AutoForm>
