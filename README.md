@@ -6,11 +6,17 @@ meteor npm run start
 
 Sign in: create new user or sign in as admin. user data found in config/setting.development.json
 
-Assignment 5
+Assignment 5 5/2/21
 Installation & Usage:
-- Register for an account on the website
-- Sign into account
-- Select add
+- Clone repository to your local machine
+- Redirect to "app" folder of the SDLC-Password-Manager repository in cmd
+- meteor npm install
+- meteor npm run start
+- Register for an account on the website or sign into an existing account
+- Select Add Password
+- Fill in the desired information and click "Encrypt"
+- View your passwords in "View Passwords"
+- Edit or delete a desired password
 
 What is complete so far:
 - Completed version of the SDLC Password Manager
@@ -20,9 +26,9 @@ What is pending:
 - Ideas for future development plans
 
 Worked on so far:
-Joe: Completed version of the application
-Simmy: Final Security Review writeup
-Andrew: Incident response plan & future development plans
+- Joe: Completed version of the application
+- Simmy: Final Security Review writeup, Wiki Page, Certified Release report
+- Andrew: Incident response plan & future development plans
 
 Progress:
 - Finished a final release version of the application
