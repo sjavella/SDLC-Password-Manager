@@ -32,7 +32,9 @@ Worked on so far:
 
 Progress:
 - Finished a final release version of the application
-- Removed admin feature 
+- Removed admin feature to reduce attack surface area
+- Added timer feature to automatically encrypt viewed passwords after 10 seconds
+- Added secure edit and delete features
 
 Closing Thoughts:
 - The SDLC password manager was a great way to gain experience on how encryption works and re-sharpening Javascript programming skills
@@ -50,12 +52,14 @@ Release Version: https://github.com/sjavella/SDLC-Password-Manager
 Wiki: https://github.com/sjavella/SDLC-Password-Manager/wiki
 
 Pending:
-- Developing timer that re-encrypts the decrypted password after 10 seconds
+- create a cryptr key generator 
 
 Roles and Responsibilities:
  - New completions: Removed admin feature as it's purpose was to test security
  - Current: Final release version of the app
- - Next: Future ideas for features and working platforms
+ - Next: increasing security features compatible platforms
+
+
 
 Assignment 4 4/11/21
 What is complete so far:
