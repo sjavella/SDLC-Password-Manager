@@ -1,5 +1,4 @@
 import React from 'react';
-import Timer from 'react-compound-timer'
 import { Table, Button, Loader } from 'semantic-ui-react';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-semantic';
 import PropTypes from 'prop-types';
@@ -8,7 +7,6 @@ import { Stuffs } from '../../api/stuff/Stuff';
 
 const Cryptr = require('cryptr');
 const cryptr = new Cryptr('myTotalySecretKey');
-const reactCompoundTimer = require("react-compound-timer");
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class StuffItem extends React.Component {

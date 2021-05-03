@@ -11,10 +11,6 @@ function createUser(email, password, role) {
     email: email,
     password: password,
   });
-  if (role === 'admin') {
-    Roles.createRole(role, { unlessExists: true });
-    Roles.addUsersToRoles(userID, 'admin');
-  }
 }
 
 // When running app for first time, pass a settings file to set up a default user account.

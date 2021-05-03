@@ -1,8 +1,6 @@
 {
   "defaultAccounts": [
-    { "email": "admin@sdlc.com", "password": "admin", "role": "admin" },
-    { "email": "user1@sdlc.com", "password": "fakepassword" },
-    { "email": "user2@sdlc.com", "password": "fakepassword2" }
+    { "email": "user@sdlc.com", "password": "fakepassword" }
   ],
 
   "defaultData": [
