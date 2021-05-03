@@ -43,6 +43,8 @@ Closing Thoughts:
 Links 
 Repository: https://github.com/sjavella/SDLC-Password-Manager
 
+Project Documentation: displayed at landing https://github.com/sjavella/SDLC-Password-Manager/blob/main/app/imports/ui/pages/Landing.jsx
+
 Release Version: https://github.com/sjavella/SDLC-Password-Manager
 
 Wiki: https://github.com/sjavella/SDLC-Password-Manager/wiki
