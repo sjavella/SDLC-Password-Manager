@@ -42,7 +42,9 @@ Closing Thoughts:
 
 Links 
 Repository: https://github.com/sjavella/SDLC-Password-Manager
+
 Release Version: https://github.com/sjavella/SDLC-Password-Manager
+
 Wiki: https://github.com/sjavella/SDLC-Password-Manager/wiki
 
 Pending:
