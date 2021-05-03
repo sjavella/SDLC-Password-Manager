@@ -34,6 +34,12 @@ Progress:
 - Finished a final release version of the application
 - Removed admin feature 
 
+Closing Thoughts:
+- The SDLC password manager was a great way to gain experience on how encryption works and re-sharpening Javascript programming skills
+- The overall project has gained insight of what it means to properly establish an app idea and run the proper security and privacy protocols.
+- Gained experience on various tools and programs to help analyze static and dynamic programming and testing the protection of the program itself.
+- Putting together a safe and protected application takes a lot of time and effort in order to achieve a set of standards that is deemed appropriate for public use.
+
 Links 
 Repository: https://github.com/sjavella/SDLC-Password-Manager
 Release Version: https://github.com/sjavella/SDLC-Password-Manager
