@@ -1,4 +1,5 @@
 import React from 'react';
+import Timer from 'react-compound-timer'
 import { Table, Button, Loader } from 'semantic-ui-react';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-semantic';
 import PropTypes from 'prop-types';
@@ -7,6 +8,7 @@ import { Stuffs } from '../../api/stuff/Stuff';
 
 const Cryptr = require('cryptr');
 const cryptr = new Cryptr('myTotalySecretKey');
+const reactCompoundTimer = require("react-compound-timer");
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class StuffItem extends React.Component {
@@ -20,9 +22,14 @@ class StuffItem extends React.Component {
     };
   }
 
+  timer = () => {
+    setTimeout(() => { this.setState({ isRequested: false }); }, 14000);
+  }
+
   load = () => {
     this.setState({ loader: true });
     setTimeout(() => {
+      this.timer();
       this.decryptedPrint();
       this.setState({ loader: false });
     }, 100);
@@ -47,7 +54,7 @@ class StuffItem extends React.Component {
       <Table.Row>
         <Table.Cell>{this.props.stuff.website}</Table.Cell>
         <Table.Cell>{this.props.stuff.username}</Table.Cell>
-        <Table.Cell>{sensitive}</Table.Cell>
+        <Table.Cell>{sensitive} </Table.Cell>
         <Table.Cell><Button content='Decrypt' color='blue' onClick={this.load} disabled={loading}/>{loading && (<Loader active>Working...</Loader>)}</Table.Cell>
         <Table.Cell><Button content='Edit' onClick={this.edit} /></Table.Cell>
         <Table.Cell><Button content='Delete' color='red' onClick={this.delete} /></Table.Cell>
@@ -65,6 +72,7 @@ StuffItem.propTypes = {
     _id: PropTypes.string,
   }).isRequired,
 };
+
 
 // Wrap this component in withRouter since we use the <Link> React Router element.
 export default withRouter(StuffItem);
