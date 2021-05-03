@@ -6,6 +6,41 @@ meteor npm run start
 
 Sign in: create new user or sign in as admin. user data found in config/setting.development.json
 
+Assignment 5
+Installation & Usage:
+- Register for an account on the website
+- Sign into account
+- Select add
+
+What is complete so far:
+- Completed version of the SDLC Password Manager
+- Final Report
+
+What is pending:
+- Ideas for future development plans
+
+Worked on so far:
+Joe: Completed version of the application
+Simmy: Final Security Review writeup
+Andrew: Incident response plan & future development plans
+
+Progress:
+- Finished a final release version of the application
+- Removed admin feature 
+
+Links 
+Repository: https://github.com/sjavella/SDLC-Password-Manager
+Release Version: https://github.com/sjavella/SDLC-Password-Manager
+Wiki: https://github.com/sjavella/SDLC-Password-Manager/wiki
+
+Pending:
+- Developing timer that re-encrypts the decrypted password after 10 seconds
+
+Roles and Responsibilities:
+ - New completions: Removed admin feature as it's purpose was to test security
+ - Current: Final release version of the app
+ - Next: Future ideas for features and working platforms
+
 Assignment 4 4/11/21
 What is complete so far:
 - backend encryption implemented
