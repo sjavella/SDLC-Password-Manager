@@ -7,10 +7,12 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Stuffs } from '../../api/stuff/Stuff';
+import token from '../../api/stuff/token';
 
 const bridge = new SimpleSchema2Bridge(Stuffs.schema);
 const Cryptr = require('cryptr');
-const cryptr = new Cryptr('myTotalySecretKey');
+const key = token.token;
+const cryptr = new Cryptr(key);
 
 /** Renders the Page for editing a single document. */
 class EditStuff extends React.Component {

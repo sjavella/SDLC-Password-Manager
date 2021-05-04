@@ -4,9 +4,11 @@ import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-semantic
 import PropTypes from 'prop-types';
 import { withRouter, Link, Redirect, Router, Route} from 'react-router-dom';
 import { Stuffs } from '../../api/stuff/Stuff';
+import token from '../../api/stuff/token';
 
 const Cryptr = require('cryptr');
-const cryptr = new Cryptr('myTotalySecretKey');
+const key = token.token;
+const cryptr = new Cryptr(key);
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class StuffItem extends React.Component {
@@ -52,7 +54,7 @@ class StuffItem extends React.Component {
       <Table.Row>
         <Table.Cell>{this.props.stuff.website}</Table.Cell>
         <Table.Cell>{this.props.stuff.username}</Table.Cell>
-        <Table.Cell>{sensitive} </Table.Cell>
+        {sensitive}
         <Table.Cell><Button content='Decrypt' color='blue' onClick={this.load} disabled={loading}/>{loading && (<Loader active>Working...</Loader>)}</Table.Cell>
         <Table.Cell><Button content='Edit' onClick={this.edit} /></Table.Cell>
         <Table.Cell><Button content='Delete' color='red' onClick={this.delete} /></Table.Cell>

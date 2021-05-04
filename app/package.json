@@ -2,7 +2,7 @@
   "name": "meteor-application-template-react",
   "private": true,
   "dependencies": {
-    "@babel/runtime": "^7.13.7",
+    "@babel/runtime": "^7.14.0",
     "aws-sdk": "^2.884.0",
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",

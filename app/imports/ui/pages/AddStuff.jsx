@@ -6,6 +6,7 @@ import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import { Stuffs } from '../../api/stuff/Stuff';
+import token from '../../api/stuff/token';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
@@ -16,7 +17,8 @@ const formSchema = new SimpleSchema({
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 const Cryptr = require('cryptr');
-const cryptr = new Cryptr('myTotalySecretKey');
+const key = token.token;
+const cryptr = new Cryptr(key);
 
 /** Renders the Page for adding a document. */
 class AddStuff extends React.Component {
