@@ -23,7 +23,11 @@ class StuffItem extends React.Component {
   }
 
   timer = () => {
-    setTimeout(() => { this.setState({ isRequested: false }); }, 14000);
+    setTimeout(() => {
+      this.setState((currentState, props) => {
+        return { isRequested: !currentState.isRequested, decryptedPassword: "" };
+      });
+    }, 14000);
   }
 
   load = () => {

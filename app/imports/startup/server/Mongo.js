@@ -9,11 +9,3 @@ function addData(data) {
   } (${data.owner})`);
   Stuffs.collection.insert(data);
 }
-
-// Initialize the StuffsCollection if empty.
-if (Stuffs.collection.find().count() === 0) {
-  if (Meteor.settings.defaultData) {
-    console.log('Creating default data.');
-    Meteor.settings.defaultData.map(data => addData(data));
-  }
-}

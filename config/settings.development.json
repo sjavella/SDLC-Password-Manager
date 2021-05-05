@@ -1,10 +1,5 @@
 {
   "defaultAccounts": [
     { "email": "user@sdlc.com", "password": "fakepassword" }
-  ],
-
-  "defaultData": [
-    { "website": "amazon.com", "username": "amazon_username", "owner": "user@sdlc.com", "password": "notaRealpassword123" },
-    { "website": "apple.com", "username": "apple_username", "owner": "user@sdlc.com", "password": "notaRealpassword456" }
   ]
 }
